@@ -6,4 +6,6 @@ import org.springframework.stereotype.Service;
 public interface RandomNumberService {
 
     Integer randomOutcomeWithEight();
+
+    Integer randomOutcomeWithRange(int start, int end);
 }

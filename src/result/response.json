@@ -1,0 +1,528 @@
+{
+  "name": "RCB_VS_CSK Result",
+  "code": "001RCB_VS_CSK",
+  "result": "CSK Won by 1 wickets",
+  "desc": "RCB : 37-3 [Balls: 14:: Overs 2.2]:: \" ::CSK:38-2 [Balls : 15:: Overs 2.3] \" ::: (105 balls Left)",
+  "inningsList": [
+    {
+      "name": "1stInnings",
+      "code": "1stInnings-RCB",
+      "totalBalls": 120,
+      "remainingBalls": 106,
+      "ballsUsed": 14,
+      "totalScore": 37,
+      "totalWickets": 3,
+      "remainingWickets": 0,
+      "totalExtras": 0,
+      "overs": 20,
+      "oversUsed": 2.2,
+      "battingTeam": "RCB",
+      "batsmenList": [
+        {
+          "ballsPlayed": 5,
+          "scored": 21,
+          "strike": 0,
+          "nosSixes": 0,
+          "nosThrees": 0,
+          "nosFours": 0,
+          "nosTwos": 0,
+          "nosSingles": 0,
+          "nosDots": 0,
+          "players": {
+            "code": "001",
+            "name": "Virat Kohli",
+            "isCap": false,
+            "age": 30,
+            "ownedBy": "None",
+            "nation": "IND",
+            "roles": "Batsmen"
+          }
+        },
+        {
+          "ballsPlayed": 6,
+          "scored": 9,
+          "strike": 0,
+          "nosSixes": 0,
+          "nosThrees": 0,
+          "nosFours": 0,
+          "nosTwos": 0,
+          "nosSingles": 0,
+          "nosDots": 0,
+          "players": {
+            "code": "002",
+            "name": "AB de Villiers",
+            "isCap": false,
+            "age": 30,
+            "ownedBy": null,
+            "nation": null,
+            "roles": "Batsmen"
+          }
+        },
+        {
+          "ballsPlayed": 3,
+          "scored": 7,
+          "strike": 0,
+          "nosSixes": 0,
+          "nosThrees": 0,
+          "nosFours": 0,
+          "nosTwos": 0,
+          "nosSingles": 0,
+          "nosDots": 0,
+          "players": {
+            "code": "003",
+            "name": "c",
+            "isCap": false,
+            "age": 30,
+            "ownedBy": "None",
+            "nation": "IND",
+            "roles": "Batsmen"
+          }
+        }
+      ],
+      "bowlersList": [
+        {
+          "balls": 14,
+          "overs": 0,
+          "runs": 37,
+          "nosSixes": 0,
+          "nosFours": 0,
+          "nosThrees": 0,
+          "nosTwos": 0,
+          "nosSingles": 0,
+          "nosDots": 0,
+          "wickets": 3,
+          "players": {
+            "code": "001",
+            "name": "y",
+            "isCap": false,
+            "age": 30,
+            "ownedBy": "None",
+            "nation": "IND",
+            "roles": "Batsmen"
+          }
+        }
+      ],
+      "oversList": [
+        {
+          "overRuns": 26,
+          "overWickets": 1,
+          "overExtras": 0,
+          "outComesList": [
+            {
+              "outcome": 6,
+              "wicketType": "NONE",
+              "extraType": "NONE",
+              "noBalls": 0,
+              "currentRuns": 6
+            },
+            {
+              "outcome": 5,
+              "wicketType": "NONE",
+              "extraType": "NONE",
+              "noBalls": 0,
+              "currentRuns": 11
+            },
+            {
+              "outcome": 4,
+              "wicketType": "NONE",
+              "extraType": "NONE",
+              "noBalls": 0,
+              "currentRuns": 15
+            },
+            {
+              "outcome": 6,
+              "wicketType": "NONE",
+              "extraType": "NONE",
+              "noBalls": 0,
+              "currentRuns": 21
+            },
+            {
+              "outcome": 0,
+              "wicketType": "WICKET",
+              "extraType": "NONE",
+              "noBalls": 0,
+              "currentRuns": 21
+            },
+            {
+              "outcome": 5,
+              "wicketType": "NONE",
+              "extraType": "NONE",
+              "noBalls": 0,
+              "currentRuns": 26
+            }
+          ]
+        },
+        {
+          "overRuns": 8,
+          "overWickets": 1,
+          "overExtras": 0,
+          "outComesList": [
+            {
+              "outcome": 0,
+              "wicketType": "NONE",
+              "extraType": "NONE",
+              "noBalls": 0,
+              "currentRuns": 26
+            },
+            {
+              "outcome": 1,
+              "wicketType": "NONE",
+              "extraType": "NONE",
+              "noBalls": 0,
+              "currentRuns": 27
+            },
+            {
+              "outcome": 2,
+              "wicketType": "NONE",
+              "extraType": "NONE",
+              "noBalls": 0,
+              "currentRuns": 29
+            },
+            {
+              "outcome": 1,
+              "wicketType": "NONE",
+              "extraType": "NONE",
+              "noBalls": 0,
+              "currentRuns": 30
+            },
+            {
+              "outcome": 0,
+              "wicketType": "WICKET",
+              "extraType": "NONE",
+              "noBalls": 0,
+              "currentRuns": 30
+            },
+            {
+              "outcome": 4,
+              "wicketType": "NONE",
+              "extraType": "NONE",
+              "noBalls": 0,
+              "currentRuns": 34
+            }
+          ]
+        },
+        {
+          "overRuns": 3,
+          "overWickets": 0,
+          "overExtras": 0,
+          "outComesList": [
+            {
+              "outcome": 3,
+              "wicketType": "NONE",
+              "extraType": "NONE",
+              "noBalls": 0,
+              "currentRuns": 37
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2ndInnings",
+      "code": "2ndInnings-CSK",
+      "totalBalls": 120,
+      "remainingBalls": 105,
+      "ballsUsed": 15,
+      "totalScore": 38,
+      "totalWickets": 2,
+      "remainingWickets": 1,
+      "totalExtras": 0,
+      "overs": 20,
+      "oversUsed": 2.3,
+      "battingTeam": "CSK",
+      "batsmenList": [
+        {
+          "ballsPlayed": 9,
+          "scored": 22,
+          "strike": 0,
+          "nosSixes": 0,
+          "nosThrees": 0,
+          "nosFours": 0,
+          "nosTwos": 0,
+          "nosSingles": 0,
+          "nosDots": 0,
+          "players": {
+            "code": "001",
+            "name": "z",
+            "isCap": false,
+            "age": 30,
+            "ownedBy": "None",
+            "nation": "IND",
+            "roles": "Batsmen"
+          }
+        },
+        {
+          "ballsPlayed": 3,
+          "scored": 3,
+          "strike": 0,
+          "nosSixes": 0,
+          "nosThrees": 0,
+          "nosFours": 0,
+          "nosTwos": 0,
+          "nosSingles": 0,
+          "nosDots": 0,
+          "players": {
+            "code": "001",
+            "name": "x",
+            "isCap": false,
+            "age": 30,
+            "ownedBy": "None",
+            "nation": "IND",
+            "roles": "Batsmen"
+          }
+        },
+        {
+          "ballsPlayed": 3,
+          "scored": 13,
+          "strike": 0,
+          "nosSixes": 0,
+          "nosThrees": 0,
+          "nosFours": 0,
+          "nosTwos": 0,
+          "nosSingles": 0,
+          "nosDots": 0,
+          "players": {
+            "code": "001",
+            "name": "y",
+            "isCap": false,
+            "age": 30,
+            "ownedBy": "None",
+            "nation": "IND",
+            "roles": "Batsmen"
+          }
+        }
+      ],
+      "bowlersList": [
+        {
+          "balls": 15,
+          "overs": 0,
+          "runs": 38,
+          "nosSixes": 0,
+          "nosFours": 0,
+          "nosThrees": 0,
+          "nosTwos": 0,
+          "nosSingles": 0,
+          "nosDots": 0,
+          "wickets": 2,
+          "players": {
+            "code": "003",
+            "name": "c",
+            "isCap": false,
+            "age": 30,
+            "ownedBy": "None",
+            "nation": "IND",
+            "roles": "Batsmen"
+          }
+        }
+      ],
+      "oversList": [
+        {
+          "overRuns": 21,
+          "overWickets": 0,
+          "overExtras": 0,
+          "outComesList": [
+            {
+              "outcome": 5,
+              "wicketType": "NONE",
+              "extraType": "NONE",
+              "noBalls": 0,
+              "currentRuns": 5
+            },
+            {
+              "outcome": 4,
+              "wicketType": "NONE",
+              "extraType": "NONE",
+              "noBalls": 0,
+              "currentRuns": 9
+            },
+            {
+              "outcome": 3,
+              "wicketType": "NONE",
+              "extraType": "NONE",
+              "noBalls": 0,
+              "currentRuns": 12
+            },
+            {
+              "outcome": 1,
+              "wicketType": "NONE",
+              "extraType": "NONE",
+              "noBalls": 0,
+              "currentRuns": 13
+            },
+            {
+              "outcome": 2,
+              "wicketType": "NONE",
+              "extraType": "NONE",
+              "noBalls": 0,
+              "currentRuns": 15
+            },
+            {
+              "outcome": 6,
+              "wicketType": "NONE",
+              "extraType": "NONE",
+              "noBalls": 0,
+              "currentRuns": 21
+            }
+          ]
+        },
+        {
+          "overRuns": 4,
+          "overWickets": 2,
+          "overExtras": 0,
+          "outComesList": [
+            {
+              "outcome": 0,
+              "wicketType": "NONE",
+              "extraType": "NONE",
+              "noBalls": 0,
+              "currentRuns": 21
+            },
+            {
+              "outcome": 1,
+              "wicketType": "NONE",
+              "extraType": "NONE",
+              "noBalls": 0,
+              "currentRuns": 22
+            },
+            {
+              "outcome": 0,
+              "wicketType": "WICKET",
+              "extraType": "NONE",
+              "noBalls": 0,
+              "currentRuns": 22
+            },
+            {
+              "outcome": 2,
+              "wicketType": "NONE",
+              "extraType": "NONE",
+              "noBalls": 0,
+              "currentRuns": 24
+            },
+            {
+              "outcome": 1,
+              "wicketType": "NONE",
+              "extraType": "NONE",
+              "noBalls": 0,
+              "currentRuns": 25
+            },
+            {
+              "outcome": 0,
+              "wicketType": "WICKET",
+              "extraType": "NONE",
+              "noBalls": 0,
+              "currentRuns": 25
+            }
+          ]
+        },
+        {
+          "overRuns": 13,
+          "overWickets": 0,
+          "overExtras": 0,
+          "outComesList": [
+            {
+              "outcome": 6,
+              "wicketType": "NONE",
+              "extraType": "NONE",
+              "noBalls": 0,
+              "currentRuns": 31
+            },
+            {
+              "outcome": 4,
+              "wicketType": "NONE",
+              "extraType": "NONE",
+              "noBalls": 0,
+              "currentRuns": 35
+            },
+            {
+              "outcome": 3,
+              "wicketType": "NONE",
+              "extraType": "NONE",
+              "noBalls": 0,
+              "currentRuns": 38
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "match": {
+    "code": "001",
+    "name": "RCB_VS_CSK",
+    "location": "Chennei",
+    "type": "T20",
+    "date": "2018-01-10T08:14:00.000+00:00",
+    "teamA": {
+      "name": "RCB",
+      "code": "team",
+      "coachName": "testCoach",
+      "ownedBy": "none",
+      "nation": "IND",
+      "playersList": [
+        {
+          "code": "001",
+          "name": "Virat Kohli",
+          "isCap": false,
+          "age": 30,
+          "ownedBy": "None",
+          "nation": "IND",
+          "roles": "Batsmen"
+        },
+        {
+          "code": "002",
+          "name": "AB de Villiers",
+          "isCap": false,
+          "age": 30,
+          "ownedBy": null,
+          "nation": null,
+          "roles": "Batsmen"
+        },
+        {
+          "code": "003",
+          "name": "c",
+          "isCap": false,
+          "age": 30,
+          "ownedBy": "None",
+          "nation": "IND",
+          "roles": "Batsmen"
+        }
+      ]
+    },
+    "teamB": {
+      "name": "CSK",
+      "code": "team",
+      "coachName": "testCoach",
+      "ownedBy": "none",
+      "nation": "IND",
+      "playersList": [
+        {
+          "code": "001",
+          "name": "z",
+          "isCap": false,
+          "age": 30,
+          "ownedBy": "None",
+          "nation": "IND",
+          "roles": "Batsmen"
+        },
+        {
+          "code": "001",
+          "name": "x",
+          "isCap": false,
+          "age": 30,
+          "ownedBy": "None",
+          "nation": "IND",
+          "roles": "Batsmen"
+        },
+        {
+          "code": "001",
+          "name": "y",
+          "isCap": false,
+          "age": 30,
+          "ownedBy": "None",
+          "nation": "IND",
+          "roles": "Batsmen"
+        }
+      ]
+    },
+    "totalOverByMatchType": 20
+  }
+}

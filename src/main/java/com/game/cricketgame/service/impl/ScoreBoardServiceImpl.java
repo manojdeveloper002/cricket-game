@@ -32,6 +32,10 @@ public class ScoreBoardServiceImpl implements ScoreBoardService {
     private static final int zero = 0;
     private static final int one = 1;
     private static final int out = 7;
+    private static final float ballsInOvers = 0.1f;
+    private static final float oversInBalls = 0.6f;
+
+
 
 
     @Override
@@ -72,8 +76,8 @@ public class ScoreBoardServiceImpl implements ScoreBoardService {
     }
 
     private String fetchString(Innings firstInnings, Innings secondInnings){
-        return firstInnings.getBattingTeam()+" : "+firstInnings.getTotalScore()+"-"+firstInnings.getTotalWickets()+" [Balls: "+firstInnings.getBallsUsed()+"]"+
-                ":::"+secondInnings.getBattingTeam()+":"+secondInnings.getTotalScore()+"-"+secondInnings.getTotalWickets()+" [Balls : "+secondInnings.getBallsUsed()+" ]";
+        return firstInnings.getBattingTeam()+" : "+firstInnings.getTotalScore()+"-"+firstInnings.getTotalWickets()+" [Balls: "+firstInnings.getBallsUsed()+":: Overs "+firstInnings.getOversUsed()+"]"+
+                ":: \" ::"+secondInnings.getBattingTeam()+":"+secondInnings.getTotalScore()+"-"+secondInnings.getTotalWickets()+" [Balls : "+secondInnings.getBallsUsed()+":: Overs "+secondInnings.getOversUsed()+"] \"";
     }
 
     private Innings startInnings(Match match, String inningsName, String battingTeam, List<Players> batsmenList,
@@ -86,6 +90,8 @@ public class ScoreBoardServiceImpl implements ScoreBoardService {
 
     private Innings matchInitiated(Innings ing, List<Players> batsmenList, List<Players> bowlersList, Boolean isChaser, int chasingScore) {
         int bowlOrd = one;
+        int trackOver = zero;
+        float tackOverBalls = zero;
         int bowlerChange = (int)Math.ceil((double) ing.getOvers() /Math.min(bowlersList.size(), bowlersLimit)) * overBalls;
         int wickets = batsmenList.size();
         log.info("Match Initiated wickets:"+wickets+" bowlerChange: "+ bowlerChange);
@@ -98,6 +104,7 @@ public class ScoreBoardServiceImpl implements ScoreBoardService {
 
         for (int balls = one; balls <= ing.getTotalBalls(); balls++){
             if(wickets == zero){
+                log.info("No wickets");
                 break;
             }
             OutCome oc = new OutCome();
@@ -105,8 +112,10 @@ public class ScoreBoardServiceImpl implements ScoreBoardService {
             ing.setBallsUsed(balls);
             batsman.setBallsPlayed(batsman.getBallsPlayed() + one);
             bowler.setBalls(bowler.getBalls()+one);
-            int outcome = randomNumberService.randomOutcomeWithEight();
+            //int outcome = randomNumberService.randomOutcomeWithEight();
+            int outcome = randomNumberService.randomOutcomeWithRange(0, 8);
             log.info("outcome :::: "+outcome);
+            tackOverBalls += ballsInOvers;
             if(outcome == out || outcome == out+one){
                 bowler.setWickets(bowler.getWickets()+one);
                 oc.setOutcome(zero);
@@ -116,6 +125,11 @@ public class ScoreBoardServiceImpl implements ScoreBoardService {
                 --wickets;
                 log.info("wickets :::: "+wickets);
                 if(wickets == zero){
+                    log.info("All out no wickets");
+                    if(tackOverBalls == oversInBalls){
+                        tackOverBalls = zero;
+                        trackOver += one;
+                    }
                     break;
                 }
                 ing.getBatsmenList().add(batsman);
@@ -134,15 +148,10 @@ public class ScoreBoardServiceImpl implements ScoreBoardService {
             }
             overs.getOutComesList().add(oc);
 
-            if (isChaser) {
-                if (ing.getTotalScore() > chasingScore) {
-                    log.info("Is chaser Total Score"+ing.getTotalScore()+" chasingScore "+chasingScore);
-                    break;
-                }
-            }
-
             if(overChanger == balls){
-                log.info("overChanger overChanger "+overChanger+" balls "+balls);
+                log.info("overChanger overChanger "+overChanger+" balls "+balls+" tackOverBalls "+tackOverBalls+ "trackOver" +trackOver);
+                tackOverBalls = zero;
+                trackOver += one;
                 overChanger += overBalls;
                 ing.getOversList().add(overs);
                 overs = new Over();
@@ -154,7 +163,14 @@ public class ScoreBoardServiceImpl implements ScoreBoardService {
                 ++bowlOrd;
                 bowler = changeBowler(bowlersList, bowlOrd, bowlersList.size());
             }
+            if (isChaser) {
+                if (ing.getTotalScore() > chasingScore) {
+                    log.info("Is chaser Total Score"+ing.getTotalScore()+" chasingScore "+chasingScore);
+                    break;
+                }
+            }
         }
+        ing.setOversUsed(trackOver+tackOverBalls);
         ing.getBowlersList().add(bowler);
         ing.getBatsmenList().add(batsman);
         ing.getOversList().add(overs);

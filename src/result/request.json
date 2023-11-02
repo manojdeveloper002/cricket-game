@@ -1,0 +1,82 @@
+{
+  "code": "001",
+  "name": "RCB_VS_CSK",
+  "teamA": {
+    "name": "RCB",
+    "code": "team",
+    "coachName": "testCoach",
+    "ownedBy": "none",
+    "nation":"IND",
+    "playersList": [
+      {
+        "name": "Virat Kohli",
+        "age": 30,
+        "roles": "Batsmen",
+        "isCap": false,
+        "code":"001",
+        "ownedBy": "None",
+        "nation": "IND"
+      },
+      {
+        "name": "AB de Villiers",
+        "playerNumber": "01",
+        "age": 30,
+        "roles": "Batsmen",
+        "isCap": false,
+        "code":"002"
+      },
+      {
+        "name": "c",
+        "playerNumber": "01",
+        "age": 30,
+        "roles": "Batsmen",
+        "isCap": false,
+        "code":"003",
+        "ownedBy": "None",
+        "nation": "IND"
+      }
+    ]
+  },
+  "teamB": {
+    "name": "CSK",
+    "code": "team",
+    "coachName": "testCoach",
+    "ownedBy": "none",
+    "nation":"IND",
+    "playersList": [
+      {
+        "name": "z",
+        "playerNumber": "01",
+        "age": 30,
+        "roles": "Batsmen",
+        "isCap": false,
+        "code":"001",
+        "ownedBy": "None",
+        "nation": "IND"
+      },
+      {
+        "name": "x",
+        "playerNumber": "01",
+        "age": 30,
+        "roles": "Batsmen",
+        "isCap": false,
+        "code":"001",
+        "ownedBy": "None",
+        "nation": "IND"
+      },
+      {
+        "name": "y",
+        "playerNumber": "01",
+        "age": 30,
+        "roles": "Batsmen",
+        "isCap": false,
+        "code":"001",
+        "ownedBy": "None",
+        "nation": "IND"
+      }
+    ]
+  },
+  "date": "2018-01-10T08:14:00",
+  "type": "T20",
+  "location": "Chennei"
+}
