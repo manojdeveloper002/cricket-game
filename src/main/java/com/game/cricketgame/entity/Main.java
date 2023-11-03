@@ -1,4 +1,4 @@
-package com.game.cricketgame.entities;
+package com.game.cricketgame.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

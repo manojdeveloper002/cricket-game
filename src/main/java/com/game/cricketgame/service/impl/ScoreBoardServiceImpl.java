@@ -2,8 +2,10 @@ package com.game.cricketgame.service.impl;
 
 import com.game.cricketgame.enums.ExtraType;
 import com.game.cricketgame.enums.WicketType;
-import com.game.cricketgame.model.*;
+import com.game.cricketgame.entities.*;
+import com.game.cricketgame.repos.ScoreBoardRepo;
 import com.game.cricketgame.service.InningsService;
+import com.game.cricketgame.service.MatchService;
 import com.game.cricketgame.service.RandomNumberService;
 import com.game.cricketgame.service.ScoreBoardService;
 import org.slf4j.Logger;
@@ -20,10 +22,16 @@ public class ScoreBoardServiceImpl implements ScoreBoardService {
     private static final Logger log = LoggerFactory.getLogger(ScoreBoardServiceImpl.class);
 
     @Autowired
-    InningsService inningsService;
+    private InningsService inningsService;
 
     @Autowired
-    RandomNumberService randomNumberService;
+    private MatchService matchService;
+
+    @Autowired
+    private ScoreBoardRepo repo;
+
+    @Autowired
+    private RandomNumberService randomNumberService;
     BiPredicate<Integer, Integer> firstInningsWon = (scoreOne, scoreTwo) -> scoreOne >  scoreTwo;
     BiPredicate<Integer, Integer> secondInningsWon = (scoreOne, scoreTwo) -> scoreOne < scoreTwo;
 
@@ -41,20 +49,23 @@ public class ScoreBoardServiceImpl implements ScoreBoardService {
     @Override
     public ScoreBoard InitiateMatch(Match match) {
         log.info("Game Started");
+        matchService.save(match);
+        return createAndInitiateInnings(match);
 
-        Innings firstInnings = startInnings(match, "1stInnings", match.getTeamA().getName(), match.getTeamA().getPlayersList(),
-                match.getTeamB().getPlayersList(), false, 0);
-        log.info("FirstInnings Over");
-        Innings secondInnings = startInnings(match, "2ndInnings", match.getTeamB().getName(), match.getTeamB().getPlayersList(),
-                match.getTeamA().getPlayersList(), true, firstInnings.getTotalScore());
-        log.info("SecondInnings Over");
-        ScoreBoard sc = createScoreBoard(match, firstInnings, secondInnings);
+    }
 
-        sc.getInningsList().addAll(Arrays.asList(firstInnings, secondInnings));
-        log.info("ScoreBoard is Ready");
+    @Override
+    public ScoreBoard checkMatchExited(Long matchId) {
+        return repo.findScoreBoardByMatchId(matchId);
+    }
 
-        return sc;
-
+    @Override
+    public ScoreBoard InitiateMatch(Long matchId) {
+            Match match = matchService.fetch(matchId);
+            if (match != null) {
+                return createAndInitiateInnings(match);
+            }
+            return  null;
     }
 
     private ScoreBoard createScoreBoard(Match match, Innings firstInnings, Innings secondInnings){
@@ -71,7 +82,6 @@ public class ScoreBoardServiceImpl implements ScoreBoardService {
             sc.setDesc(fetchString(firstInnings, secondInnings));
         }
         sc.setName(match.getName()+" Result");
-        sc.setCode(match.getCode()+match.getName());
         return sc;
     }
 
@@ -177,6 +187,8 @@ public class ScoreBoardServiceImpl implements ScoreBoardService {
         ing.setTotalWickets(batsmenList.size()- wickets);
         ing.setRemainingWickets(batsmenList.size() - (batsmenList.size()- wickets));
         log.info("Innings Completed");
+        inningsService.save(ing);
+        log.info("Innings Updated");
         return ing;
     }
 
@@ -195,4 +207,54 @@ public class ScoreBoardServiceImpl implements ScoreBoardService {
         log.info("changed bowler "+bw.getPlayers().getName());
         return bw;
     }
+
+    @Override
+    public ScoreBoard save(ScoreBoard scoreBoard) {
+        return repo.save(scoreBoard);
+    }
+
+    @Override
+    public ScoreBoard update(ScoreBoard match) {
+        ScoreBoard updatedData = repo.findById(match.getId()).orElse(null);
+        if(updatedData != null){
+            repo.save(match);
+        }
+        return match;
+    }
+
+    @Override
+    public void delete(Long id) {
+        repo.deleteById(id);
+    }
+
+    @Override
+    public ScoreBoard fetch(Long id) {
+        return repo.findById(id).orElse(null);
+    }
+
+    @Override
+    public List<ScoreBoard> fetchAll() {
+        return repo.findAll();
+    }
+
+    @Override
+    public List<ScoreBoard> saveAll(List<ScoreBoard> scoreBoardList) {
+        return repo.saveAll(scoreBoardList);
+    }
+
+    private ScoreBoard createAndInitiateInnings(Match match){
+        Innings firstInnings = startInnings(match, "1stInnings", match.getTeamA().getName(), match.getTeamA().getPlayersList(),
+                match.getTeamB().getPlayersList(), false, 0);
+        log.info("FirstInnings Over");
+        Innings secondInnings = startInnings(match, "2ndInnings", match.getTeamB().getName(), match.getTeamB().getPlayersList(),
+                match.getTeamA().getPlayersList(), true, firstInnings.getTotalScore());
+        log.info("SecondInnings Over");
+        ScoreBoard sc = createScoreBoard(match, firstInnings, secondInnings);
+
+        sc.getInningsList().addAll(Arrays.asList(firstInnings, secondInnings));
+        log.info("ScoreBoard is Ready");
+        repo.save(sc);
+        return sc;
+    }
+
 }

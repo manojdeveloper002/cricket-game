@@ -1,5 +1,6 @@
-package com.game.cricketgame.model;
+package com.game.cricketgame.entities;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,10 +11,13 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@Entity
 public class Innings {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     private String name;
-    private String code;
     private Integer totalBalls = 0;
     private Integer remainingBalls = 0;
     private Integer ballsUsed = 0;
@@ -24,8 +28,17 @@ public class Innings {
     private Integer overs = 0;
     private Float oversUsed = 0f;
     private String battingTeam;
+
+    @OneToMany(cascade=CascadeType.ALL)
+    @JoinColumn(name = "innings_Id")
     private List<Batsmen> batsmenList = new ArrayList<>();
+
+    @OneToMany(cascade=CascadeType.ALL)
+    @JoinColumn(name = "innings_Id")
     private List<Bowlers> bowlersList = new ArrayList<>();
+
+    @OneToMany(cascade=CascadeType.ALL)
+    @JoinColumn(name = "innings_Id")
     private List<Over> oversList = new ArrayList<>();
 
 }

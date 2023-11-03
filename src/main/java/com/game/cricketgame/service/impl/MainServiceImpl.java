@@ -1,6 +1,6 @@
 package com.game.cricketgame.service.impl;
 
-import com.game.cricketgame.entities.Main;
+import com.game.cricketgame.entity.Main;
 import com.game.cricketgame.repos.MainRepo;
 import com.game.cricketgame.service.MainService;
 import org.springframework.beans.factory.annotation.Autowired;
