@@ -1,14 +1,14 @@
 package com.game.cricketgame.service.impl;
 
 import com.game.cricketgame.entities.Match;
+import com.game.cricketgame.entities.Players;
 import com.game.cricketgame.repos.MatchRepo;
 import com.game.cricketgame.service.MatchService;
 import com.game.cricketgame.service.TeamService;
-import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.*;
 
 @Service
 public class MatchServiceImpl implements MatchService {
@@ -63,4 +63,18 @@ public class MatchServiceImpl implements MatchService {
         }
         return repo.save(match);
     }
+
+    @Override
+    public Map<String, List<Players>> getListOfPlayers(Long id) {
+        Map<String, List<Players>> listPlayer = new HashMap<>();
+        Match match = repo.findById(id).orElse(null);
+        if(match != null){
+            listPlayer.put("TeamA", match.getTeamA().getPlayersList());
+            listPlayer.put("TeamB", match.getTeamB().getPlayersList());
+        }else{
+            listPlayer.put("NotFound", null);
+        }
+        return listPlayer;
+    }
+
 }
