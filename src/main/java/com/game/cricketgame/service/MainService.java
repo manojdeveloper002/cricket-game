@@ -1,6 +1,6 @@
 package com.game.cricketgame.service;
 
-import com.game.cricketgame.entities.Main;
+import com.game.cricketgame.entity.Main;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

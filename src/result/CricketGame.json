@@ -1,0 +1,466 @@
+{
+	"info": {
+		"_postman_id": "7a4fc8ba-c8e2-4ccc-a812-0d12ab6ffa4d",
+		"name": "CricketGame",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30913848"
+	},
+	"item": [
+		{
+			"name": "Players",
+			"item": [
+				{
+					"name": "CreatePlayer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Rohit Sharma\",\n    \"age\": 30,\n    \"roles\": \"Batsmen\",\n    \"isCap\": true,\n    \"code\": \"001\",\n    \"ownedBy\": \"None\",\n    \"nation\": \"IND\",\n    \"dob\": \"1990-01-10T08:14:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/players/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"players",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateMultiPlayers",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"name\": \"Virat Kohli\",\n        \"age\": 30,\n        \"roles\": \"Batsmen\",\n        \"isCap\": false,\n        \"code\": \"002\",\n        \"ownedBy\": \"None\",\n        \"nation\": \"IND\",\n        \"dob\": \"1990-01-10T08:14:00\"\n    },\n    {\n        \"name\": \"Mohammed Shami\",\n        \"age\": 30,\n        \"roles\": \"Bowler\",\n        \"isCap\": false,\n        \"code\": \"002\",\n        \"ownedBy\": \"None\",\n        \"nation\": \"IND\",\n        \"dob\": \"1990-01-10T08:14:00\"\n    },\n    {\n        \"name\": \"Ishant Sharma\",\n        \"age\": 30,\n        \"roles\": \"Bowler\",\n        \"isCap\": false,\n        \"code\": \"002\",\n        \"ownedBy\": \"None\",\n        \"nation\": \"IND\",\n        \"dob\": \"1990-01-10T08:14:00\"\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/players/add-all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"players",
+								"add-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletePlayer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/players/delete/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"players",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPlayerbyId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/players/fetch/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"players",
+								"fetch",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPlayer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/players/fetch-all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"players",
+								"fetch-all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Team",
+			"item": [
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/team/fetch/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"team",
+								"fetch",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/team/fetch-all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"team",
+								"fetch-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/team/delete/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"team",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"CSK\",\n    \"code\": \"team\",\n    \"ownedBy\": \"none\",\n    \"nation\": \"IND\",\n    \"playersList\": [\n        {\n            \"id\": 3\n          \n        },\n        {\n            \"id\": 4\n           \n        },\n        {\n            \"id\": 5\n          \n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/team/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"team",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-all",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\n    [\n        {\n            \"name\": \"MI\",\n            \"code\": \"team\",\n            \"ownedBy\": \"none\",\n            \"nation\": \"IND\",\n            \"playersList\": [\n                {\n                    \"id\": 52\n                  \n                },\n                {\n                    \"id\": 53\n                   \n                },\n                {\n                    \"id\": 54\n                  \n                }\n            ]\n        },\n        {\n            \"name\": \"SR\",\n            \"code\": \"team\",\n            \"ownedBy\": \"none\",\n            \"nation\": \"IND\",\n            \"playersList\": [\n                {\n                    \"id\": 55\n                  \n                },\n                {\n                    \"id\": 56\n                   \n                },\n                {\n                    \"id\": 57\n                  \n                }\n            ]\n        }\n    ]\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/team/add-all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"team",
+								"add-all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Match",
+			"item": [
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/match/fetch/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"match",
+								"fetch",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/match/fetch-all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"match",
+								"fetch-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"001\",\n    \"name\": \"RCB_VS_CSK\",\n    \"teamA\": {\n        \"id\":2\n    },\n    \"teamB\": {\n        \"id\":9\n    },\n    \"date\": \"2018-01-10T08:14:00\",\n    \"type\": \"T20\",\n    \"location\": \"Chennei\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/match/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"match",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"001\",\n    \"name\": \"RCB_VS_CSK\",\n    \"teamA\": {\n        \"id\":2\n    },\n    \"teamB\": {\n        \"id\":9\n    },\n    \"date\": \"2018-01-10T08:14:00\",\n    \"type\": \"T20\",\n    \"location\": \"Chennei\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/match/delete/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"match",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "scoreBoard",
+			"item": [
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/scoreboard/fetch/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"scoreboard",
+								"fetch",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/scoreboard/fetch-all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"scoreboard",
+								"fetch-all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "start-game",
+			"item": [
+				{
+					"name": "startGameById",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cricket-game/initiate-match/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cricket-game",
+								"initiate-match",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "startGameJSON",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"001\",\n    \"name\": \"RCB_VS_CSK\",\n    \"teamA\": {\n        \"name\": \"RCB\",\n        \"code\": \"team\",\n        \"coachName\": \"testCoach\",\n        \"ownedBy\": \"none\",\n        \"nation\":\"IND\",\n        \"playersList\": [\n            {\n                \"id\":4,\n                \"name\": \"Virat Kohli\",\n                \"age\": 30,\n                \"roles\": \"Batsmen\",\n                \"isCap\": false,\n                \"code\":\"001\",\n                \"ownedBy\": \"None\",\n                \"nation\": \"IND\"\n            },\n            {\n                \"id\":5,\n                \"name\": \"AB de Villiers\",\n                \"playerNumber\": \"01\",\n                \"age\": 30,\n                \"roles\": \"Batsmen\",\n                \"isCap\": false,\n                \"code\":\"002\"\n            },\n            {\n                \"id\":6,\n                \"name\": \"c\",\n                \"playerNumber\": \"01\",\n                \"age\": 30,\n                \"roles\": \"Batsmen\",\n                \"isCap\": false,\n                 \"code\":\"003\",\n                \"ownedBy\": \"None\",\n                \"nation\": \"IND\"\n            }\n        ]\n    },\n    \"teamB\": {\n        \"name\": \"CSK\",\n        \"code\": \"team\",\n        \"coachName\": \"testCoach\",\n        \"ownedBy\": \"none\",\n        \"nation\":\"IND\",\n        \"playersList\": [\n            {\n                \"id\":1,\n                \"name\": \"z\",\n                \"playerNumber\": \"01\",\n                \"age\": 30,\n                \"roles\": \"Batsmen\",\n                \"isCap\": false,\n                 \"code\":\"001\",\n                \"ownedBy\": \"None\",\n                \"nation\": \"IND\"\n            },\n            {\n                \"id\":2,\n                \"name\": \"x\",\n                \"playerNumber\": \"01\",\n                \"age\": 30,\n                \"roles\": \"Batsmen\",\n                \"isCap\": false,\n                 \"code\":\"001\",\n                \"ownedBy\": \"None\",\n                \"nation\": \"IND\"\n            },\n            {\n                \"id\":3,\n                \"name\": \"y\",\n                \"playerNumber\": \"01\",\n                \"age\": 30,\n                \"roles\": \"Batsmen\",\n                \"isCap\": false,\n                 \"code\":\"001\",\n                \"ownedBy\": \"None\",\n                \"nation\": \"IND\"\n            }\n        ]\n    },\n    \"date\": \"2018-01-10T08:14:00\",\n    \"type\": \"T20\",\n    \"location\": \"Chennei\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/cricket-game/initiate-match",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cricket-game",
+								"initiate-match"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

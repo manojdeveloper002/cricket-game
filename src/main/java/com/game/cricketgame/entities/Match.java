@@ -1,6 +1,7 @@
-package com.game.cricketgame.model;
+package com.game.cricketgame.entities;
 
 import com.game.cricketgame.enums.MatchType;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,14 +11,22 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@Entity
+@Table(name = "match_table")
 public class Match {
 
-    private String code;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     private String name;
     private String location;
     private MatchType type;
     private Date date;
+
+    @ManyToOne(optional = false, fetch = FetchType.EAGER)
     private Team teamA;
+
+    @ManyToOne(optional = false, fetch = FetchType.EAGER)
     private Team TeamB;
 
     public int getTotalOverByMatchType(){
