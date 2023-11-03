@@ -1,7 +1,7 @@
 package com.game.cricketgame.controller;
 
 import com.game.cricketgame.entities.Main;
-import com.game.cricketgame.service.impl.MainServiceImpl;
+import com.game.cricketgame.service.MainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,7 +12,7 @@ import java.util.List;
 public class MainController {
 
     @Autowired
-    private MainServiceImpl mainService;
+    private MainService mainService;
     @PostMapping("/create/main")
     public Main insertMain(@RequestBody Main main){
         return mainService.saveMain(main);
