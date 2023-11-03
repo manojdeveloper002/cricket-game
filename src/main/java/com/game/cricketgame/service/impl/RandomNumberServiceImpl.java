@@ -17,4 +17,10 @@ public class RandomNumberServiceImpl implements RandomNumberService {
         Random rand = new Random();
         return rand.nextInt(EIGHT);
     }
+
+    @Override
+    public Integer randomOutcomeWithRange(int start, int end) {
+        Random rand = new Random();
+        return rand.ints(start, end).findFirst().isPresent() ? rand.ints(start, end).findFirst().getAsInt() : 0;
+    }
 }

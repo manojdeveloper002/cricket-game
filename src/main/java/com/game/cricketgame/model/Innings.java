@@ -22,6 +22,7 @@ public class Innings {
     private Integer remainingWickets = 0;
     private Integer totalExtras = 0;
     private Integer overs = 0;
+    private Float oversUsed = 0f;
     private String battingTeam;
     private List<Batsmen> batsmenList = new ArrayList<>();
     private List<Bowlers> bowlersList = new ArrayList<>();
