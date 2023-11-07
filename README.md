@@ -1,1 +1,3 @@
-# cricket-game <img width="1185" alt="desgin" src="https://github.com/manojdeveloper002/cricket-game/assets/149028591/728d3c9d-4ed6-4b94-9061-d6b482a24e13">
+Design 
+
+<img width="1114" alt="cricketGameDesgin" src="https://github.com/manojdeveloper002/cricket-game/assets/149028591/3bb6f85b-7120-4162-9a32-3a725575eb70">
